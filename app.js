@@ -1,3 +1,6 @@
+//node is required to run this you're gonna want to install node and then in your terminal run "npm install" and you'll get a folder called node_modules
+//you also want to seperately install inquierer which is here https://www.npmjs.com/package/inquirer
+
 const fs = require('fs');
 const inquirer = require('inquirer');
 //importing the page-template.js 
@@ -137,7 +140,7 @@ promptUser()
   .then(promptProject)
   .then(portfolioData => {
     const pageHTML = generatePage(portfolioData);
-    
+
     fs.writeFile('./index.html', pageHTML, err => {
       if (err) throw new Error(err);
 
