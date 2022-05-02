@@ -22,7 +22,7 @@ const generateProjects = projectArr => {
   </section>
 `;
 }
-//idk what this is
+//idk what module.exports is
 module.exports = templateData => {
   
   //this object is somehow taken from app.js and includes all the user input but i have no fucking clue how it gets all of them when onnly 3 are listed
