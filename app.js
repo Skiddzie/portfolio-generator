@@ -1,7 +1,11 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
+//importing the page-template.js 
 const generatePage = require('./src/page-template');
 
+//gathers user input
+//name i believe is just the name of the variable
+//message is what the user is prompted with
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -45,6 +49,9 @@ const promptUser = () => {
   ]);
 };
 
+//gathers user input
+//name i believe is just the name of the variable
+//message is what the user is prompted with
 const promptProject = portfolioData => {
   console.log(`
 =================
@@ -125,12 +132,12 @@ Add a New Project
       }
     });
 };
-
+//calls previous functions along with page-template.js to write a new html file
 promptUser()
   .then(promptProject)
   .then(portfolioData => {
     const pageHTML = generatePage(portfolioData);
-
+    
     fs.writeFile('./index.html', pageHTML, err => {
       if (err) throw new Error(err);
 

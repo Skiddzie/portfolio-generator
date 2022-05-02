@@ -1,3 +1,4 @@
+//function that generates the bit of html with the about section
 const generateAbout = aboutText => {
   if (!aboutText) {
     return '';
@@ -10,6 +11,7 @@ const generateAbout = aboutText => {
   </section>
 `; 
 }
+//I don't think this actually does anything special other than create this chunk of html
 const generateProjects = projectArr => {
   return `
   <section class="my-3" id="portfolio">
@@ -20,11 +22,15 @@ const generateProjects = projectArr => {
   </section>
 `;
 }
+//idk what this is
 module.exports = templateData => {
   
-
+  //this object is somehow taken from app.js and includes all the user input but i have no fucking clue how it gets all of them when onnly 3 are listed
+  //and i also don't know how to include more
+  //if i could figure out how to include more then i'd be fine with the assignment
   const { projects, about, ...header } = templateData;
-
+  
+  //stuff like ${foo.bar} is just writing variables in the string
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -60,4 +66,5 @@ module.exports = templateData => {
   </body>
   </html>
   `;
+  console.log(header.name);
 };
